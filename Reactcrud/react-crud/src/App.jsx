@@ -1,6 +1,6 @@
 import React  from 'react'
 import Reactcrud from './Reactcrud'
-
+import SimpleCrud from './SimpleCrud'
 
 
 
@@ -9,7 +9,8 @@ function App() {
 
   return (
     <>                                        
-    <Reactcrud />
+    {/* <Reactcrud /> */}
+    <SimpleCrud />
     </>
   )
 }
