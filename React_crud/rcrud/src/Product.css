@@ -46,5 +46,42 @@
 .delete-btn:hover{
   background-color: black;
 }
+.searchBar {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  
+}
+.searchBar input {
+  padding: 10px 15px;
+  width:250px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.addProduct{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap:20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.addProduct input {
+  padding: 10px 15px;
+  width:250px;
+ font-size: 1rem;
+ border-radius: 5px;
+ border: 1px solid #ccc;
+
+}
+.addProduct button {
+  padding: 10px 15px;
+  background-color: blue;
+  color:white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
 
