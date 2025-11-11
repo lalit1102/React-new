@@ -17,8 +17,8 @@ const SimpleCrud = () => {
     <>
     <div>
       <form action='#' method='post' onSubmit={saveData}>
-        <label>Enter Name:---   </label>
-        <input type="text" name="name" id="name" placeholder='Enter Your name' value={''}onChange={(e)=>setName(e.target.value)} /><br /><br />
+        <label>Enter Name:---😊-  </label>
+        <input type="text" name="name" id="name" placeholder='Enter Your name'onChange={(e)=>setName(e.target.value)} /><br /><br />
         <label>Enter Age:-----</label>
         <input type="number" name="age" id="age" placeholder='Enter your age'onChange={(e)=>setAge(e.target.value)} /><br /><br />
         <label >Enter salary</label>
