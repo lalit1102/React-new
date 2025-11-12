@@ -27,7 +27,7 @@ const Products = () => {
       setProductList(products)
     }
   },[searchTearm])
-
+  //add mate function banvyu che 
   const handleAdd = () => {
     if(!productName||!productPrice){
       return alert("product name and price both are mandatory.")
