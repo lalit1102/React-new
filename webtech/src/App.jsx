@@ -1,36 +1,42 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { MarketplaceProvider } from './context/MarketplaceContext'
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 import Home from './pages/Home'
-import AboutUs from './pages/AboutUs'
-import Course from './pages/Course'
-import Project from './pages/Project'
-import Registration from './pages/Registration'
-import Reviews from './pages/Reviews'
-import AITools from './pages/AITools'
-import Database from './pages/Database'
+import Products from './pages/Products'
+import ProductDetail from './pages/ProductDetail'
+import Cart from './pages/Cart'
+import Checkout from './pages/Checkout'
+import Login from './pages/Login'
+import Register from './pages/Register'
+import Profile from './pages/Profile'
+import SellerDashboard from './pages/SellerDashboard'
 import './App.css'
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/course" element={<Course />} />
-          <Route path="/project" element={<Project />} />
-          <Route path="/registration" element={<Registration />} />
-          <Route path="/reviews" element={<Reviews />} />
-          <Route path="/ai-tools" element={<AITools />} />
-          <Route path="/database" element={<Database />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <MarketplaceProvider>
+      <Router>
+        <div className="App">
+          <Navigation />
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/product/:id" element={<ProductDetail />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/seller" element={<SellerDashboard />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </MarketplaceProvider>
   )
 }
 
 export default App
-

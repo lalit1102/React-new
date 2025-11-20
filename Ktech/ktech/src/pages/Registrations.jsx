@@ -29,50 +29,59 @@ const Registration = () => {
    
   };
 
+    const validate = () => {
+    const newErrors = {};
+    if (!formData.firstName.trim()) newErrors.firstName = "First name is required";
+    if (!formData.lastName.trim()) newErrors.lastName = "Last name is required";
+    if (!formData.email.trim()) newErrors.email = "Email is required";
+    if (!formData.phone.trim()) newErrors.phone = "Phone is required";
+    if (!formData.password) newErrors.password = "Password is required";
+    if (!formData.confirmPassword) newErrors.confirmPassword = "Please confirm password";
+    if (formData.password !== formData.confirmPassword)
+      newErrors.confirmPassword = "Passwords do not match";
+    if (!formData.course) newErrors.course = "Course is required";
+    if (!formData.agreeToTerms) newErrors.agreeToTerms = "You must agree to terms";
+    return newErrors;
+  };
+
   const handlesubmit = (e) => {
-    e.preventdefault()
-  }
-  
-  
+    e.preventDefault();
+    const newErrors = validate();
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+    setErrors({});
+    setIsSubmitted(true);
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
+    // Save registration
+    setRegistrations((prev) => [
+      ...prev,
+      {
+        ...formData,
+        id: prev.length + 1,
+        date: new Date().toLocaleString(),
+      }
+    ]);
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
+    // Reset form fields after submit (optional)
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      password: "",
+      confirmPassword: "",
+      course: "",
+      agreeToTerms: false,
+    });
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
+    // Hide success message after 1 sec (optional)
+    setTimeout(() => setIsSubmitted(false), 1000);
+  };
 
 
-
+  
 
   return (
     <>
